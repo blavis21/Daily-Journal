@@ -13,7 +13,29 @@ const journalEntries = [
     }
 ]
 
-collection = []
-collection.push(journalEntries)
-console.log(collection)
+let collection = []
+
+function makeJournalEntryComponent (date, concept, entry, mood) {
+    return `
+    <ol>
+        <li>date: ${date}</li>
+        <li>concept: ${concept}</li>
+        <li>entry: ${entry}</li>
+        <li>mood: ${mood}</li>
+    </ol>`
+};
+
+let autoGen = document.querySelector(".entryLog")
+
+for ( i=0; i < journalEntries.length; i++) {
+    let entries = journalEntries[i]
+    autoGen.innerHTML += makeJournalEntryComponent(
+        entries.date,
+        entries.concept,
+        entries.entry,
+        entries.mood
+    )
+}
+
+
 
