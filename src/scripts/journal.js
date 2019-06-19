@@ -1,41 +1,32 @@
-const journalEntries = [
-    {
-        date: "06/05/2019",
-        concept: "API/JSON",
-        entry: "We went over the basic info on API's and JSON. Downloaded Postman and practiced a little in class.",
-        mood: "Excited"
-    },
-    {
-        date: "06/06/2019",
-        concept: "Journal Entries",
-        entry: "Going through journal entry 2 and 3 trying to figure it out.",
-        mood: "Motivated"
-    }
-]
+//fetches data from json server and prints to page
+fetch("http://localhost:8088/journalEntries")
+.then( data => data.json())
+.then( entry => {
+    console.log(entry)
+    entriesHTML(entry)
+})
 
-let collection = []
-
-function makeJournalEntryComponent (date, concept, entry, mood) {
+//function that converts data into html -- to be inserted dynamically
+function makeJournalEntryComponent (input) {
     return `
-    <ol>
-        <li>date: ${date}</li>
-        <li>concept: ${concept}</li>
-        <li>entry: ${entry}</li>
-        <li>mood: ${mood}</li>
+    <div class="entry">
+        <h2>Date: ${input.date}</h2>
+        <h3>Concept: ${input.concept}</h3>
+        <p>Entry: ${input.entry}</p>
+        <p><strong>Mood: ${input.mood}</strong></p>
     </ol>`
 };
 
-let autoGen = document.querySelector(".entryLog")
-
-for ( i=0; i < journalEntries.length; i++) {
-    let entries = journalEntries[i]
-    autoGen.innerHTML += makeJournalEntryComponent(
-        entries.date,
-        entries.concept,
-        entries.entry,
-        entries.mood
-    )
+//function selects location to print html to in index.html, then loops through
+function entriesHTML(print) {
+    let entryLocation = document.querySelector(".entryLog")
+    print.forEach( (obj) => {
+        entryLocation.innerHTML += makeJournalEntryComponent(obj)
+    })
 }
 
 
-
+//data is fetched from json server
+//then data is parsed as json
+//the data is then passed into entriesHTML function called in 2nd .then
+//entriesHTML finds location to insert data, loops through the existing data, and prints to page via makeJournalEntryComponent
