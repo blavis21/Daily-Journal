@@ -3,8 +3,8 @@ function makeJournalEntryComponent (input) {
     return `
     <div class="entry">
         <h2>Date: ${input.date}</h2>
+        <h3>Mood: ${input.mood}</h3>
         <h3>Concept: ${input.concept}</h3>
-        <p>Entry: ${input.entry}</p>
-        <p><strong>Mood: ${input.mood}</strong></p>
-    </ol>`
+        <h3>Entry: ${input.entry}</h3>
+    </div>`
 };

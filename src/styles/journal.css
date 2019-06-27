@@ -1,5 +1,13 @@
+html {
+    background-color: antiquewhite
+}
+
 h1 {
     text-align: center;
+}
+
+.label {
+    margin-bottom: 16px;
 }
 
 input[type=text], select, textarea {
@@ -30,4 +38,10 @@ button[type=Button]:hover {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+}
+
+.entry {
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }

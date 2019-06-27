@@ -13,36 +13,30 @@
     <h1>Daily Journal</h1>
     <div class="container">
         <form action="" class="form">
-            <fieldset>
-                <label for="journalDate">Date of Entry</label>
-                <input type="date" name="journalDate" id="journalDate" class="label">
-            </fieldset>
+
+
+            <label for="journalDate">Date of Entry</label><br />
+            <input type="date" name="journalDate" id="journalDate" class="label" required><br />
+
+            <label for="moodForTheDay">Mood for the Day</label>
+            <select name="moodForTheDay" id="moodForTheDay" class="label" required>
+                <option value="blank"></option>
+                <option value="confused">Confused</option>
+                <option value="determined">Determined</option>
+                <option value="frustrated">Frustrated</option>
+                <option value="happy">Happy</option>
+                <option value="motivated">Motivated</option>
+                <option value="needToWorkHarder">Need to Work Harder</option>
+            </select>
+
+            <label for="conceptsCovered">Concepts Covered</label>
+            <input type="text" name="conceptsCovered" id="conceptsCovered" class="label" required>
+
+            <label for="jornalEntry">Journal Entry</label>
+            <textarea name="journalEntry" id="journalEntry" class="label" style="height:200px" required></textarea>
+
         </form>
-        <form action="" class="form">
-            <fieldset class="tiger">
-                <label for="moodForTheDay">Mood for the Day</label>
-                <select name="moodForTheDay" id="moodForTheDay" class="label">
-                    <option value="happy">Happy</option>
-                    <option value="determined">Determined</option>
-                    <option value="frustrated">Frustrated</option>
-                    <option value="confused">Confused</option>
-                    <option value="needToWorkHarder">Need to Work Harder</option>
-                </select>
-            </fieldset>
-        </form>
-        <form action="" class="form">
-            <fieldset>
-                <label for="conceptsCovered">Concepts Covered</label>
-                <input type="text" name="conceptsCovered" id="conceptsCovered" class="label">
-            </fieldset>
-        </form>
-        <form action="" class="form">
-            <fieldset>
-                <label for="jornalEntry">Journal Entry</label>
-                <textarea name="journalEntry" id="journalEntry" class="label" style="height:200px"></textarea>
-            </fieldset>
-        </form>
-        <button type="Button">Submit</button>
+        <button type="Button" id="submit-btn">Submit</button>
     </div>
     <article class="entryLog"></article>
 
