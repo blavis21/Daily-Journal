@@ -8,5 +8,6 @@ function makeJournalEntryComponent(input) {
             <h3>Concept: ${input.concept}</h3>
             <h3>Entry: ${input.entry}</h3>
         </section>
-    </div>`
+    </div>
+    <button id="delBtn-${input.id}" class="delBtn">Delete Entry</button>`
 };

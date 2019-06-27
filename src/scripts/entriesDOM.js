@@ -4,4 +4,5 @@ function entriesHTML(print) {
     print.forEach( (obj) => {
         entryLocation.innerHTML += makeJournalEntryComponent(obj)
     })
+    delEntry()
 }

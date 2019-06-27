@@ -28,21 +28,19 @@ function buildJournalObj(date, mood, concept, entry) {
 }
 
 
-let radioButton = document.getElementsByName("radioBtn")
-radioButton.forEach( (btn) => {
-    btn.addEventListener("click", () => {
-        let mood = event.target.value
-        // console.log(mood)
-        entryList.innerHTML = ""
-        API.getJournalEntries()
-        .then( data => {
-            data.filter( entries => {
-                let moodEntries = []
-                if( entries.mood === mood) {
-                    moodEntries.push(entries)
-                    entriesHTML(moodEntries)
-                }
-            })
+function delEntry() {
+    let deleteBtnArr = document.querySelectorAll(".delBtn")
+    deleteBtnArr.forEach(deleteBtn => {
+        deleteBtn.addEventListener("click", () => {
+            console.log('is this delete?', )
+            let btnID = event.target.id.split("-")[1]
+            console.log(btnID)
+            deleteEntry(btnID)
+
+
+            
+            
         })
     })
-})
+}
+
