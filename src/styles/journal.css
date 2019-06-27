@@ -45,3 +45,17 @@ button[type=Button]:hover {
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+.newEntry {
+    margin: 10px
+}
+
+fieldset {
+    margin-top: 10px;
+    margin-bottom: 20px
+}
+
+.radioBtns {
+    display: flex;
+    justify-content: space-evenly
+}
